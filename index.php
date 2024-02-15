@@ -10,7 +10,7 @@
     <header>
         <div class="header-container">
             <div class="logo-wrapper">
-                <img src="images/logoSimpleWallet.png" alt="">
+                <img src="images/logoSimple.png" alt="">
                 <div class="logo-text">
                     <p>FitTracks</p>
                     <p>Rastre tu progreso, alcanza tu objetivo.</p>
