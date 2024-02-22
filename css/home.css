@@ -96,17 +96,396 @@ hr{
 .right-menu{
     height: 100vh;
     width: 80%;
+    position: relative;
 }
 .header-right{
     width: 100%;
     height: 88px;
     background-color: white;
     border-bottom: 1px solid rgba(188, 188, 188, 0.154);
+    display: flex;
+    align-items: center;
+    position: absolute;
 }
 
 .body-right{
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     box-shadow: inset 10px 0px 15px -3px rgba(0,0,0,0.1);
     background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-wrapper{
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.welcome-wrapper p:nth-of-type(1){
+    margin-bottom: 0;
+    margin-top: 0;
+    color: grey;
+    font-size: 12px;
+}
+.welcome-wrapper p:nth-of-type(2){
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.dateweather-wrapper{
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.dateweather-wrapper p:nth-of-type(1){
+    margin-bottom: 0;
+    margin-top: 0;
+    color: grey;
+    font-size: 12px;
+    text-align: right;
+}
+.dateweather-wrapper p:nth-of-type(2){
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.session-list-wrapper{
+    width: 60%;
+    height: 80%;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.exercises-list-wrapper{
+    width: 35%;
+    height: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.bento-card{
+    border: 1px solid rgba(189, 189, 189, 0.193);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    height: 80%;
+}
+
+.title-bento-card{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-bento-card i{
+    font-size: 30px;
+    color: rgb(221 114 38);
+    margin-right: 10px;
+}
+
+.title-bento-card p{
+    text-transform: uppercase;
+}
+
+.title-bento-card p:nth-of-type(2){
+    text-transform: none;
+    color: grey;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.session-list-wrapper form{
+    padding: 10px;
+    height: 80%;
+}
+.inputs-container{
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs-container input, .inputs-container select{
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(221 114 38);
+}
+.inputs-container label:nth-of-type(2){
+    margin-left: 10px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: fit-content; 
+}
+
+#modalWeather .inputs-container:nth-of-type(1) input, 
+#modalWeather .inputs-container:nth-of-type(2) input{
+    padding: 5px;
+}
+
+#modalWeather .inputs-container:nth-of-type(2){
+    margin-top: 5px;
+}
+
+#modalWeather .inputs-container:nth-of-type(3) > *{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#modalWeather .inputs-container:nth-of-type(3) input{
+    margin-left: auto;
+    margin-right: 5px;
+    border: none;
+    background-color: rgb(196, 251, 196);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#modalWeather .inputs-container:nth-of-type(3) input:hover{
+    background-color: rgb(172, 251, 172);
+}
+
+#modalWeather .inputs-container:nth-of-type(3) button{
+    margin-right: auto;
+    margin-left: 5px;
+    border: none;
+    background-color: rgb(251, 178, 178);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#modalWeather .inputs-container:nth-of-type(3) button:hover{
+    background-color:rgb(255, 147, 147);
+}
+
+.alertaError{
+    padding: 10px;
+    background-color: rgb(253, 199, 199);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.session-list{
+    height: 85%;
+    overflow-y: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px 5px 15px 5px;
+    
+}
+
+.card-shadow{
+    width: 90%;
+    background-color: rgb(221 114 38);
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
+
+.exercises-wrapper{
+    height: fit-content;
+    width: 91%;
+    margin-left: auto;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    background: #e6e6e6;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+}
+.exercise{
+    width: 45%;
+}
+
+.exercise-container{
+    display: flex;
+}
+
+.title-exercise{
+    margin-right: 2px;
+}
+
+.exercise p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.exercise p:nth-of-type(2){
+    color: rgb(54, 54, 54);
+    text-transform: capitalize;
+}
+
+.info-btn{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(1, 180, 1);
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);   
+}
+
+.info-btn:hover{
+    background-color: rgb(0, 126, 0);
+}
+
+.delete-exercise-btn{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(245, 49, 49);
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+}
+
+.delete-exercise-btn:hover{
+    background-color: rgb(191, 3, 3);
+}
+
+
+
+.exercises-list-wrapper .card-shadow{
+    width: 85%;
+    position: relative;
+}
+
+.exercises-list-wrapper .exercise{
+    width: 90%;
+}
+
+.exercises-list-wrapper .exercises-wrapper{
+    width: 85%;
+}
+
+.exercises-list-wrapper .inputs-container{
+    margin-top: 20px;
+}
+
+.btn-container{
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el modal */
+.modal-informacion {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed; /* Permite que el modal flote sobre el contenido */
+    z-index: 1; /* Coloca el modal por encima del resto del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  }
+  
+  /* Estilos para el contenido del modal */
+  .modal-informacion .modal-contenido {
+    background-color: #fefefe; /* Fondo del modal */
+    margin: 15% auto; /* Centra el modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Ancho máximo del modal */
+  }
+  
+  /* Estilos para el botón de cerrar */
+  .modal-informacion .cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-informacion .cerrar:hover,
+  .modal-informacion .cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .save-session-btn{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(1, 180, 1);
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+  .mensaje-translucido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(208 238 209);
+    color: black;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    width: 90%;
+    height: 78%;
+    display: flex;
+    align-items: center;
+}
+
+.mensaje-translucido h2 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+
+}
+
+.session-save-success{
+    position: absolute;
+    background-color: #c6f3c6;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+}
+.session-save-error{
+    position: absolute;
+    background-color: #f3c6c6;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+}
+
+.mensaje-dia-vacio{
+    color: grey;
+    width: 100%;
+    text-align: center;
 }
