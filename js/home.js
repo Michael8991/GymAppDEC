@@ -76,7 +76,6 @@ formWeather.addEventListener('submit', (e) =>{
 })
 
 function mostrarError(mensaje){
-    formWeather.preventDefault();
     const divError = document.createElement('div');
     divError.classList.add('alertaError');
     divError.innerText = mensaje;
